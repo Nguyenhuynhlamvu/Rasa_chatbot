@@ -1,0 +1,100 @@
+version: "3.1"
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - inquire_time
+  - where_i_live
+  - request_borrow_book
+  - inform
+
+entities:
+  - name
+  - place
+  - book_type
+  - borrow_dates
+
+slots:
+  name:
+    type: any
+    mappings:
+      - type: from_entity
+        entity: name
+
+  book_type:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: book_type
+
+  borrow_dates:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: borrow_dates
+
+forms:
+  lend_form:
+    required_slots:
+      - book_type
+      - borrow_dates
+
+responses:
+  utter_greet:
+  - text: "Hey {name}, bạn có khỏe không?"
+    buttons:
+    - title: "great"
+      payload: "/mood_great"
+    - title: "sad"
+      payload: "/mood_unhappy"
+  - text: "Hello {name}!"
+  - text: "Hi {name}, tôi có thể giúp gì cho bạn?"
+
+  utter_cheer_up:
+  - text: "Thứ này có thể làm bạn vui lên:"
+    image: "cheer_up.jpg"
+
+  utter_did_that_help:
+  - text: "Nó có làm bạn vui không?"
+  - text: "Bạn đã đỡ buồn hơn chưa"
+
+  utter_happy:
+  - text: "Tuyệt, vậy thì tốt quá."
+
+  utter_bye:
+  - text: "Kính chào tạm biệt và mong sớm gặp lại quý khách!"
+  - text: "Kính chào tạm biệt và chúc quý khách một ngày tốt lành!"
+
+  utter_iamabot:
+  - text: "Tôi chỉ là một robot."
+
+  utter_book_slots:
+  - text: "Tôi sẽ cho bạn mượn cuốn sách {book_type} trong {borrow_dates} ngày. Bạn có muốn tôi dẫn đến kệ đề sách {book_type} không."
+
+  utter_ask_book_type:
+  - text: "Bạn muốn mượn sách gì?"
+  
+  utter_ask_borrow_dates:
+  - text: "bạn muốn mượn trong mấy ngày?"
+  
+  utter_unclear:
+  - text: "Thưa quý khách, hiện tại tôi chưa hiểu được yêu cầu của Quý khách. "
+
+actions:
+- action_remember_where
+- action_tell_time
+- utter_greet
+- utter_submit
+- utter_book_slots
+- validate_lend_form
+- action_run_goal_broadcaster

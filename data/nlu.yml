@@ -1,0 +1,116 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - xin chào, mình là [ái](name)
+    - chào bạn, mình tên là [nam](name)
+    - hello
+    - hi, mình là [nữ](name)
+    - hey
+    - mình có vài câu hỏi
+    - có ai giúp mình không
+    - bạn ơi
+    - anh ơi
+    - chị ơi
+    - cháu ơi
+    - alo
+    - chào
+    - hi 
+    - có ai ở đây không?
+
+- intent: goodbye
+  examples: |
+    - tạm biệt
+    - chào tạm biệt
+    - chào tạm biệt em
+    - tạm biệt em
+    - tạm biệt em nhé
+    - bye
+
+- intent: affirm
+  examples: |
+    - vâng
+    - đúng rồi
+    - oke
+    - được
+    - nghe được đấy
+    - nghe ổn đấy
+    - có
+    - rồi
+
+- intent: deny
+  examples: |
+    - không
+    - không bao giờ
+    - tôi không nghĩ vậy
+    - không đời nào
+    - tôi không thích như vậy
+
+- intent: mood_great
+  examples: |
+    - good
+    - tuyệt vời
+    - hoàn hảo
+    - trên cả tuyệt vời
+    - nghe tuyệt đấy
+    - tôi thấy ổn hơn rồi
+    - quá được
+    - tôi cảm thấy ổn hơn rồi
+
+- intent: mood_unhappy
+  examples: |
+    - Ngày hôm nay của tôi thật tệ
+    - tôi đang rất buồn
+    - tôi buồn quá
+    - tôi thấy không ổn chút nào
+    - tớ mệt quá
+    - tạo mệt mỏi quá
+    - siêu buồn
+    - không có gì vui cả
+
+- intent: bot_challenge
+  examples: |
+    - mày có phải là robot
+    - mày có phải là con người
+    - cậu là robot hả
+    - cậu có phải là robot không
+    - bạn là con người à
+
+- intent: inquire_time
+  examples: |
+    - mấy giờ rồi?
+    - bạn biết mấy giờ rồi không?
+    - Bây giờ là mấy giờ
+    - cho tôi biết giờ hiện tại ở [VietNam](place)
+    - bây giờ là mấy giờ ở [London](place)?
+- lookup: place
+  examples: |
+    - VietNam
+    - London
+
+- intent: where_i_live
+  examples: |
+    - hãy nhớ rằng tôi đang sống ở [SaiGon](place)?
+    - trọ tôi ở [HaNoi](place)?
+    - nhà tôi nằm ở [SaiGon](place)
+
+- intent: request_borrow_book
+  examples: |
+    - tôi muốn mượn một quyển sách
+    - cho tôi mượn một cuốn sách
+    - tôi có thể  lấy sách ở đây không
+    - cho tôi mượn sách
+    - tớ cần mượn sách
+    - cho mình mượn sách
+    - mình mượn sách
+
+- intent: inform
+  examples: |
+    - sách [văn học](book_type)
+    - tôi muốn mượn sách về [văn học](book_type)
+    - tôi mượn trong [một](borrow_dates) ngày
+    - [hai](borrow_dates) ngày
+    - [toán học](book_type)
+    - sách [vật lý](book_type)
+    - [ba](borrow_dates) ngày

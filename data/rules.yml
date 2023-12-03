@@ -1,0 +1,42 @@
+version: "3.1"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: bye
+  - action: utter_bye
+  
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: Tell the time
+  steps:
+  - intent: inquire_time
+  - action: action_tell_time
+
+- rule: Where I live intent
+  steps:
+  - intent: where_i_live
+  - action: action_remember_where
+
+- rule: lend book
+  steps:
+  - intent: request_borrow_book
+  - action: lend_form
+  - active_loop: lend_form
+  - intent: affirm
+  - action: action_run_goal_broadcaster
+
+- rule: submit lend form
+  condition:
+  - active_loop: lend_form
+  steps:
+  - action: lend_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_submit
+  - action: utter_book_slots
