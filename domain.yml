@@ -79,7 +79,7 @@ responses:
   - text: "Tôi chỉ là một robot."
 
   utter_book_slots:
-  - text: "Tôi sẽ cho bạn mượn cuốn sách {book_type} trong {borrow_dates} ngày. Bạn có muốn tôi dẫn đến kệ đề sách {book_type} không."
+  - text: "Có phải mày muốn mượn cuốn sách {book_type} trong {borrow_dates} ngày không?"
 
   utter_ask_book_type:
   - text: "Bạn muốn mượn sách gì?"
@@ -90,11 +90,15 @@ responses:
   utter_unclear:
   - text: "Thưa quý khách, hiện tại tôi chưa hiểu được yêu cầu của Quý khách. "
 
+  # utter_ask_for_instruction:
+  # - text: "Mày có cần bố mày dẫn đường hay không?"
+
 actions:
 - action_remember_where
 - action_tell_time
 - utter_greet
-- utter_submit
+- action_submit
 - utter_book_slots
 - validate_lend_form
 - action_run_goal_broadcaster
+- action_ask_for_instruction

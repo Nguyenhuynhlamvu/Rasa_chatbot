@@ -29,6 +29,19 @@ stories:
   - intent: deny
   - action: utter_bye
 
+- story: lend book
+  steps:
+  - intent: request_borrow_book
+  - action: lend_form
+  - active_loop: lend_form
+  - action: action_submit
+  - intent: affirm
+  - action: action_ask_for_instruction
+  - or:
+    - intent: affirm
+    - intent: deny
+  - action: action_run_goal_broadcaster
+
 - story: interactive_story_1
   steps:
   - intent: greet

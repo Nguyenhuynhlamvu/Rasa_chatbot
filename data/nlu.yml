@@ -46,6 +46,7 @@ nlu:
     - tôi không nghĩ vậy
     - không đời nào
     - tôi không thích như vậy
+    - đéo
 
 - intent: mood_great
   examples: |

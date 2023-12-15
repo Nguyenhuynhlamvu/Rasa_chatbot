@@ -89,3 +89,10 @@ stories:
       are you a bot?
     intent: bot_challenge
   - action: utter_iamabot
+
+# - story: lend book
+#   steps:
+#   - intent: request_borrow_book
+#   - action: lend_form
+#   - active_loop: lend_form
+#   - intent: affirm

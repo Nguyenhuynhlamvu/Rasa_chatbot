@@ -22,7 +22,6 @@ ALLOWED_BOOK_DATES = ["một", "hai", "ba"]
 ALLOWED_BOOK_TYPE = ["toán học", "văn học", "vật lý"]
 
 class ActionTellTime(Action):
-
     def name(self) -> Text:
         return "action_tell_time"
 
@@ -34,6 +33,29 @@ class ActionTellTime(Action):
         
         msg = f"It's {utc.format('HH:mm')} in {current_place} now. "
         dispatcher.utter_message(text=msg)
+
+        return []
+    
+class ActionRunGoalBroadcaster(Action):
+
+    def name(self) -> Text:
+        return "action_run_goal_broadcaster"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        if tracker.get_intent_of_latest_message() == "affirm":
+            msg = "Được rồi, theo tôi."
+            dispatcher.utter_message(text=msg)
+            
+            # Path to your Python node inside the Catkin workspace
+            python_node_path = '/home/xuanai/catkin_ws/src/library_robot/scripts/goal_broadcaster.py'
+
+            # Run the ROS Python node from the Catkin workspace
+            process = subprocess.Popen(['/usr/bin/python3', python_node_path])
+        else:
+            dispatcher.utter_message(text="Oke, đéo cần thì thôi.")
 
         return []
     
@@ -54,11 +76,9 @@ class ActionValidateLendForm(FormValidationAction):
         if slot_value.lower() not in ALLOWED_BOOK_TYPE:
             dispatcher.utter_message(text=f"Chúng tôi không có loại sách {slot_value}.")
             return {"book_type": None}
-        dispatcher.utter_message(text=f"OK! Bạn muốn mượn sách {slot_value}.")
+        # dispatcher.utter_message(text=f"OK! Bạn muốn mượn sách {slot_value}.")
         return {"book_type": slot_value}
-        
 
-        return []
 
     def validate_borrow_dates(self,
                            slot_value: Any,
@@ -70,37 +90,37 @@ class ActionValidateLendForm(FormValidationAction):
         if slot_value.lower() not in ALLOWED_BOOK_DATES:
             dispatcher.utter_message(text=f"Chúng tôi không cho phép mượn sách quá ba ngày.")
             return {"borrow_dates": None}
-        # Path to your Python node inside the Catkin workspace
-        python_node_path = '/home/xuanai/catkin_ws/src/library_robot/scripts/goal_broadcaster.py'
-
-        # Run the ROS Python node from the Catkin workspace
-        process = subprocess.Popen(['/usr/bin/python3', python_node_path])
-
-        dispatcher.utter_message(text=f"OK! Bạn muốn mượn sách trong {slot_value} ngày.")
-        return {"borrow_dates": slot_value}
         
+        # dispatcher.utter_message(text=f"OK! Bạn muốn mượn sách trong {slot_value} ngày.")
+        return {"borrow_dates": slot_value}
 
-        return []
 
-
-class ActionValidateLendForm(FormValidationAction):
+class ActionSubmit(Action):
 
     def name(self) -> Text:
-        return "utter_submit"
+        return "action_submit"
     
 
-    def submit_borrow_session(self, dispatcher: CollectingDispatcher,
+    def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        # current_place = next(tracker.get_latest_entity_values("place"), None)
-        # utc = arrow.utcnow()
         
-        # msg = f" Borrow session submited "
-        # dispatcher.utter_message(text=msg)
-
-        
-
+        dispatcher.utter_message(text=f"Oke bạn muốn mượn cuốn sách {tracker.get_slot('book_type')} trong {tracker.get_slot('borrow_dates')} ngày phải không?")
+        # dispatcher.utter_message(text="Oke bạn muốn mượn cuốn sách ngày phải không?")
         return []
-        
+    
 
+class ActionAskforInstruction(Action):
+
+    def name(self) -> Text:
+        return "action_ask_for_instruction"
+    
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        dispatcher.utter_message(text="Mày có cần bố mày dẫn đường hay không?")
+        # dispatcher.utter_message(text="Oke bạn muốn mượn cuốn sách ngày phải không?")
         return []
+    
