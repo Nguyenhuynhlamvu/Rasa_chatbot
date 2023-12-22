@@ -29,24 +29,40 @@ stories:
   - intent: deny
   - action: utter_bye
 
-- story: lend book
+- story: find book
   steps:
-  - intent: request_borrow_book
-  - action: lend_form
-  - active_loop: lend_form
-  - action: action_submit
-  - intent: affirm
-  - action: action_ask_for_instruction
-  - or:
-    - intent: affirm
-    - intent: deny
-  - action: action_run_goal_broadcaster
+  - intent: ask_for_finding_books
+  - action: utter_ask_find_book
 
-- story: interactive_story_1
+# - story: lend book 1
+#   steps:
+#   - intent: request_borrow_book
+#   - action: lend_form
+#   - active_loop: lend_form
+#   - action: action_submit
+#   - intent: affirm
+#   - action: action_ask_for_instruction
+#   - or:
+#     - intent: affirm
+#     - intent: deny
+#   - action: action_run_goal_broadcaster
+
+- story: return book
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: inquire_time
-    entities:
-    - place: SaiGon
-  - action: action_tell_time
+  - intent: request_return_book
+  - action: utter_request_place_book
+  - intent: affirm
+  - action: action_request_place_book
+  - intent: affirm
+  - action: utter_request_place_student_card
+  - intent: affirm
+  - action: action_process_return_form
+
+# - story: interactive_story_1
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: inquire_time
+#     entities:
+#     - place: SaiGon
+#   - action: action_tell_time

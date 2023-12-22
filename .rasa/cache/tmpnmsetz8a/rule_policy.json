@@ -1,0 +1,41 @@
+{
+  "lookup": {
+    "rules": {
+      "[{\"active_loop\": {\"name\": \"utter_greet_with_name\"}, \"prev_action\": {\"action_name\": \"greet\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"bot_challenge\"}}]": "utter_iamabot",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"bot_challenge\"}}, {\"prev_action\": {\"action_name\": \"utter_iamabot\"}, \"user\": {\"intent\": \"bot_challenge\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"goodbye\"}}]": "utter_bye",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"goodbye\"}}, {\"prev_action\": {\"action_name\": \"utter_bye\"}, \"user\": {\"intent\": \"goodbye\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"inquire_time\"}}]": "action_tell_time",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"inquire_time\"}}, {\"prev_action\": {\"action_name\": \"action_tell_time\"}, \"user\": {\"intent\": \"inquire_time\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"where_i_live\"}}]": "action_remember_where",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"where_i_live\"}}, {\"prev_action\": {\"action_name\": \"action_remember_where\"}, \"user\": {\"intent\": \"where_i_live\"}}]": "action_listen"
+    },
+    "rule_only_slots": [],
+    "rule_only_loops": [
+      "utter_greet_with_name"
+    ],
+    "rules_for_loop_unhappy_path": {
+      "[{\"active_loop\": {\"name\": \"utter_greet_with_name\"}, \"prev_action\": {\"action_name\": \"greet\"}}]": "do_not_predict_loop_action",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}}, {\"active_loop\": {\"name\": \"lend_form\"}, \"prev_action\": {\"action_name\": \"lend_form\"}, \"user\": {\"intent\": \"request_borrow_book\"}}]": "do_not_predict_loop_action",
+      "[{\"prev_action\": {\"action_name\": \"lend_form\"}}, {\"active_loop\": {\"name\": \"lend_form\"}, \"prev_action\": {\"action_name\": \"action_submit\"}, \"user\": {\"intent\": \"request_borrow_book\"}}]": "do_not_predict_loop_action",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}}, {\"active_loop\": {\"name\": \"lend_form\"}, \"prev_action\": {\"action_name\": \"action_ask_for_instruction\"}, \"user\": {\"intent\": \"affirm\"}}]": "do_not_predict_loop_action",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}}, {\"active_loop\": {\"name\": \"lend_form\"}, \"prev_action\": {\"action_name\": \"action_run_goal_broadcaster\"}, \"user\": {\"intent\": \"deny\"}}]": "do_not_predict_loop_action",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}}, {\"active_loop\": {\"name\": \"lend_form\"}, \"prev_action\": {\"action_name\": \"action_run_goal_broadcaster\"}, \"user\": {\"intent\": \"affirm\"}}]": "do_not_predict_loop_action"
+    },
+    "rules_not_in_stories": [
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"goodbye\"}}, {\"prev_action\": {\"action_name\": \"utter_bye\"}, \"user\": {\"intent\": \"goodbye\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"where_i_live\"}}, {\"prev_action\": {\"action_name\": \"action_remember_where\"}, \"user\": {\"intent\": \"where_i_live\"}}]",
+      "predicting default action with intent session_start",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"where_i_live\"}}]",
+      "predicting default action with intent back",
+      "handling active loops and forms - lend_form",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"bot_challenge\"}}]",
+      "predicting default action with intent restart",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"goodbye\"}}]",
+      "[{\"active_loop\": {\"name\": \"utter_greet_with_name\"}, \"prev_action\": {\"action_name\": \"greet\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"bot_challenge\"}}, {\"prev_action\": {\"action_name\": \"utter_iamabot\"}, \"user\": {\"intent\": \"bot_challenge\"}}]",
+      "handling active loops and forms - lend_form - action_listen"
+    ]
+  }
+}

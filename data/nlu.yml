@@ -78,38 +78,56 @@ nlu:
     - cậu có phải là robot không
     - bạn là con người à
 
-- intent: inquire_time
-  examples: |
-    - mấy giờ rồi?
-    - bạn biết mấy giờ rồi không?
-    - Bây giờ là mấy giờ
-    - cho tôi biết giờ hiện tại ở [VietNam](place)
-    - bây giờ là mấy giờ ở [London](place)?
-- lookup: place
-  examples: |
-    - VietNam
-    - London
+# - intent: inquire_time
+#   examples: |
+#     - mấy giờ rồi?
+#     - bạn biết mấy giờ rồi không?
+#     - Bây giờ là mấy giờ
+#     - cho tôi biết giờ hiện tại ở [VietNam](place)
+#     - bây giờ là mấy giờ ở [London](place)?
+# - lookup: place
+#   examples: |
+#     - VietNam
+#     - London
 
-- intent: where_i_live
-  examples: |
-    - hãy nhớ rằng tôi đang sống ở [SaiGon](place)?
-    - trọ tôi ở [HaNoi](place)?
-    - nhà tôi nằm ở [SaiGon](place)
+# - intent: where_i_live
+#   examples: |
+#     - hãy nhớ rằng tôi đang sống ở [SaiGon](place)?
+#     - trọ tôi ở [HaNoi](place)?
+#     - nhà tôi nằm ở [SaiGon](place)
 
 - intent: request_borrow_book
   examples: |
     - tôi muốn mượn một quyển sách
     - cho tôi mượn một cuốn sách
-    - tôi có thể  lấy sách ở đây không
     - cho tôi mượn sách
     - tớ cần mượn sách
     - cho mình mượn sách
     - mình mượn sách
 
+- intent: request_return_book
+  examples: |
+    - tôi muốn trả một quyển sách
+    - cho tôi trả một cuốn sách
+    - cho tôi trả sách
+    - tớ cần trả sách
+    - cho mình trả sách
+    - mình trả sách
+    - trả
+    - trả sách
+
+- intent: ask_for_finding_books
+  examples: |
+    - Mình muốn tìm một cuốn sách
+    - Tao muốn tìm sách
+    - Tìm giúp tớ cuốn sách
+    - Bạn có thể tìm cho mình cuốn sách này không
+
 - intent: inform
   examples: |
     - sách [văn học](book_type)
     - tôi muốn mượn sách về [văn học](book_type)
+    - tôi muốn mượn sách về [văn học](book_type) trong [một](borrow_dates) ngày
     - tôi mượn trong [một](borrow_dates) ngày
     - [hai](borrow_dates) ngày
     - [toán học](book_type)

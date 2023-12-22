@@ -11,14 +11,16 @@ intents:
   - mood_great
   - mood_unhappy
   - bot_challenge
-  - inquire_time
-  - where_i_live
+  # - inquire_time
+  # - where_i_live
   - request_borrow_book
+  - request_return_book
   - inform
+  - ask_for_finding_books
 
 entities:
   - name
-  - place
+  # - place
   - book_type
   - borrow_dates
 
@@ -50,15 +52,14 @@ forms:
       - borrow_dates
 
 responses:
-  utter_greet:
+  utter_greet_with_name:
   - text: "Hey {name}, bạn có khỏe không?"
-    buttons:
-    - title: "great"
-      payload: "/mood_great"
-    - title: "sad"
-      payload: "/mood_unhappy"
   - text: "Hello {name}!"
   - text: "Hi {name}, tôi có thể giúp gì cho bạn?"
+
+  utter_greet:
+  - text: "Xin chào tôi có thể giúp gì cho bạn?"
+  - text: "Xin chào, bạn có cần tôi giúp gì không?"
 
   utter_cheer_up:
   - text: "Thứ này có thể làm bạn vui lên:"
@@ -88,17 +89,28 @@ responses:
   - text: "bạn muốn mượn trong mấy ngày?"
   
   utter_unclear:
-  - text: "Thưa quý khách, hiện tại tôi chưa hiểu được yêu cầu của Quý khách. "
+  - text: "Thưa quý khách, hiện tại tôi chưa hiểu được yêu cầu của Quý khách."
 
-  # utter_ask_for_instruction:
-  # - text: "Mày có cần bố mày dẫn đường hay không?"
+  utter_request_place_student_card:
+  - text: "Làm ơn đưa thẻ sinh viên của bạn vào để tôi hoàn thành thủ tục trả sách."
+
+  utter_request_place_book:
+  - text: "Làm ơn hãy đưa sách vào khe bên dưới để mình kiểm tra."
+
+  utter_ask_find_book:
+  - text: "Bạn muốn tìm sách gì?"
 
 actions:
-- action_remember_where
-- action_tell_time
+# - action_remember_where
+# - action_tell_time
 - utter_greet
 - action_submit
 - utter_book_slots
 - validate_lend_form
+- utter_ask_find_book
 - action_run_goal_broadcaster
 - action_ask_for_instruction
+- action_process_return_form
+- action_request_place_book
+- utter_request_place_book
+- utter_request_place_student_card

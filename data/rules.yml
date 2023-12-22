@@ -12,15 +12,23 @@ rules:
   - intent: bot_challenge
   - action: utter_iamabot
 
-- rule: Tell the time
-  steps:
-  - intent: inquire_time
-  - action: action_tell_time
+# - rule: Tell the time
+#   steps:
+#   - intent: inquire_time
+#   - action: action_tell_time
 
-- rule: Where I live intent
+# - rule: Where I live intent
+#   steps:
+#   - intent: where_i_live
+#   - action: action_remember_where
+
+- rule: utter greet with name
+  condition:
+  - slot_was_set:
+    - name: true
   steps:
-  - intent: where_i_live
-  - action: action_remember_where
+  - action: greet
+  - active_loop: utter_greet_with_name
 
 # - rule: submit lend form
 #   condition:
