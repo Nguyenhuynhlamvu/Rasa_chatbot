@@ -38,6 +38,8 @@ nlu:
     - nghe ổn đấy
     - có
     - rồi
+    - ô kê
+    - muốn
 
 - intent: deny
   examples: |
@@ -47,6 +49,7 @@ nlu:
     - không đời nào
     - tôi không thích như vậy
     - đéo
+    - chưa
 
 - intent: mood_great
   examples: |
@@ -133,3 +136,22 @@ nlu:
     - [toán học](book_type)
     - sách [vật lý](book_type)
     - [ba](borrow_dates) ngày
+    - sách [vật lý](book_name)
+    - sách [khoa học](book_name)
+    - [trí tuệ nhân tạo](book_name)
+    
+- lookup: book_name
+  examples: |
+    - lý 1
+    - vật lý 1
+    - toán 2
+    - hóa đại cương
+
+- lookup: borrow_dates
+  examples: |
+    - 1
+    - 2
+    - 3
+    - 4
+    - một
+    - hai

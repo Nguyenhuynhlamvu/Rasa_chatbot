@@ -1,0 +1,36 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-book_type",
+      "2": "I-book_type",
+      "3": "L-book_type",
+      "4": "U-book_type",
+      "5": "B-borrow_dates",
+      "6": "I-borrow_dates",
+      "7": "L-borrow_dates",
+      "8": "U-borrow_dates",
+      "9": "B-name",
+      "10": "I-name",
+      "11": "L-name",
+      "12": "U-name",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-book_type": 1,
+      "I-book_type": 2,
+      "L-book_type": 3,
+      "U-book_type": 4,
+      "B-borrow_dates": 5,
+      "I-borrow_dates": 6,
+      "L-borrow_dates": 7,
+      "U-borrow_dates": 8,
+      "B-name": 9,
+      "I-name": 10,
+      "L-name": 11,
+      "U-name": 12,
+      "O": 0
+    },
+    "num_tags": 13
+  }
+]

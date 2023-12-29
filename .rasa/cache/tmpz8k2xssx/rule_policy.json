@@ -1,0 +1,47 @@
+{
+  "lookup": {
+    "rules": {
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"goodbye\"}}]": "utter_bye",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"goodbye\"}}, {\"prev_action\": {\"action_name\": \"utter_bye\"}, \"user\": {\"intent\": \"goodbye\"}}]": "action_listen",
+      "[{\"active_loop\": {\"name\": \"utter_greet_with_name\"}, \"prev_action\": {\"action_name\": \"greet\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"bot_challenge\"}}]": "utter_iamabot",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"bot_challenge\"}}, {\"prev_action\": {\"action_name\": \"utter_iamabot\"}, \"user\": {\"intent\": \"bot_challenge\"}}]": "action_listen"
+    },
+    "rule_only_slots": [],
+    "rule_only_loops": [
+      "utter_greet_with_name"
+    ],
+    "rules_for_loop_unhappy_path": {
+      "[{\"active_loop\": {\"name\": \"utter_greet_with_name\"}, \"prev_action\": {\"action_name\": \"greet\"}}]": "do_not_predict_loop_action",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}}, {\"active_loop\": {\"name\": \"place_borrow_book_form\"}, \"prev_action\": {\"action_name\": \"place_borrow_book_form\"}, \"user\": {\"intent\": \"deny\"}}]": "do_not_predict_loop_action",
+      "[{\"prev_action\": {\"action_name\": \"place_borrow_book_form\"}}, {\"active_loop\": {\"name\": \"place_borrow_book_form\"}, \"prev_action\": {\"action_name\": \"action_process_lend_form\"}, \"user\": {\"intent\": \"deny\"}}]": "do_not_predict_loop_action",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}}, {\"active_loop\": {\"name\": \"find_book_form\"}, \"prev_action\": {\"action_name\": \"find_book_form\"}, \"user\": {\"intent\": \"deny\"}}]": "do_not_predict_loop_action",
+      "[{\"prev_action\": {\"action_name\": \"find_book_form\"}}, {\"active_loop\": {\"name\": \"find_book_form\"}, \"prev_action\": {\"action_name\": \"action_find_book\"}, \"user\": {\"intent\": \"deny\"}}]": "do_not_predict_loop_action",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}}, {\"active_loop\": {\"name\": \"find_book_form\"}, \"prev_action\": {\"action_name\": \"action_ask_for_instruction\"}, \"user\": {\"intent\": \"affirm\"}}]": "do_not_predict_loop_action",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}}, {\"active_loop\": {\"name\": \"find_book_form\"}, \"prev_action\": {\"action_name\": \"action_run_goal_broadcaster\"}, \"user\": {\"intent\": \"affirm\"}}]": "do_not_predict_loop_action",
+      "[{\"prev_action\": {\"action_name\": \"action_run_goal_broadcaster\"}}, {\"active_loop\": {\"name\": \"find_book_form\"}, \"prev_action\": {\"action_name\": \"action_clear_book_form_slot\"}, \"user\": {\"intent\": \"affirm\"}}]": "do_not_predict_loop_action",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}}, {\"active_loop\": {\"name\": \"place_borrow_book_form\"}, \"prev_action\": {\"action_name\": \"place_borrow_book_form\"}, \"user\": {\"intent\": \"affirm\"}}]": "do_not_predict_loop_action",
+      "[{\"prev_action\": {\"action_name\": \"place_borrow_book_form\"}}, {\"active_loop\": {\"name\": \"place_borrow_book_form\"}, \"prev_action\": {\"action_name\": \"action_process_lend_form\"}, \"user\": {\"intent\": \"affirm\"}}]": "do_not_predict_loop_action",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}}, {\"active_loop\": {\"name\": \"find_book_form\"}, \"prev_action\": {\"action_name\": \"find_book_form\"}, \"user\": {\"intent\": \"ask_for_finding_books\"}}]": "do_not_predict_loop_action",
+      "[{\"prev_action\": {\"action_name\": \"find_book_form\"}}, {\"active_loop\": {\"name\": \"find_book_form\"}, \"prev_action\": {\"action_name\": \"action_find_book\"}, \"user\": {\"intent\": \"ask_for_finding_books\"}}]": "do_not_predict_loop_action",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}}, {\"active_loop\": {\"name\": \"find_book_form\"}, \"prev_action\": {\"action_name\": \"action_run_goal_broadcaster\"}, \"user\": {\"intent\": \"deny\"}}]": "do_not_predict_loop_action",
+      "[{\"prev_action\": {\"action_name\": \"action_run_goal_broadcaster\"}}, {\"active_loop\": {\"name\": \"find_book_form\"}, \"prev_action\": {\"action_name\": \"action_clear_book_form_slot\"}, \"user\": {\"intent\": \"deny\"}}]": "do_not_predict_loop_action"
+    },
+    "rules_not_in_stories": [
+      "handling active loops and forms - lend_form - action_listen",
+      "handling active loops and forms - lend_form",
+      "predicting default action with intent back",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"goodbye\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"bot_challenge\"}}]",
+      "handling active loops and forms - place_borrow_book_form",
+      "[{\"active_loop\": {\"name\": \"utter_greet_with_name\"}, \"prev_action\": {\"action_name\": \"greet\"}}]",
+      "predicting default action with intent restart",
+      "handling active loops and forms - find_book_form",
+      "handling active loops and forms - find_book_form - action_listen",
+      "predicting default action with intent session_start",
+      "handling active loops and forms - place_borrow_book_form - action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"bot_challenge\"}}, {\"prev_action\": {\"action_name\": \"utter_iamabot\"}, \"user\": {\"intent\": \"bot_challenge\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"goodbye\"}}, {\"prev_action\": {\"action_name\": \"utter_bye\"}, \"user\": {\"intent\": \"goodbye\"}}]"
+    ]
+  }
+}

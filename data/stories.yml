@@ -2,60 +2,84 @@ version: "3.1"
 
 stories:
 
-- story: happy path
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_great
-  - action: utter_happy
-
-- story: sad path 1
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_happy
-
-- story: sad path 2
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: deny
-  - action: utter_bye
-
-- story: find book
-  steps:
-  - intent: ask_for_finding_books
-  - action: utter_ask_find_book
-
-# - story: lend book 1
+# - story: happy path
 #   steps:
-#   - intent: request_borrow_book
-#   - action: lend_form
-#   - active_loop: lend_form
-#   - action: action_submit
-#   - intent: affirm
-#   - action: action_ask_for_instruction
+#   - intent: greet
+#   - action: utter_greet
 #   - or:
 #     - intent: affirm
 #     - intent: deny
-#   - action: action_run_goal_broadcaster
+#   - action: action_process_lend_form
+
+# - story: sad path 1
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: mood_unhappy
+#   - action: utter_cheer_up
+#   - action: utter_did_that_help
+#   - intent: affirm
+#   - action: utter_happy
+
+# - story: sad path 2
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - intent: mood_unhappy
+#   - action: utter_cheer_up
+#   - action: utter_did_that_help
+#   - intent: deny
+#   - action: utter_bye
+
+- story: lend book 1
+  steps:
+  - intent: request_borrow_book
+  - action: utter_ask_already_have_book
+  - intent: deny
+  - checkpoint: check_find_book
+
+- story: lend book 2
+  steps:
+  - intent: request_borrow_book
+  - action: utter_ask_already_have_book
+  - intent: affirm
+  - action: utter_request_place_student_card
+  - intent: affirm
+  - action: action_request_place_student_card
+  - intent: affirm
+  # - action: utter_request_place_book
+  # - intent: affirm
+  - action: action_request_place_borrow_book
+  - or:
+    - intent: affirm
+    - intent: deny
+  - action: place_borrow_book_form
+  - active_loop: place_borrow_book_form
+  - action: action_process_lend_form
+  
+- story: find book
+  steps:
+  - intent: ask_for_finding_books
+  - checkpoint: check_find_book
+  - action: find_book_form
+  - active_loop: find_book_form
+  - action: action_find_book
+  - intent: affirm
+  - action: action_ask_for_instruction
+  - or:
+    - intent: affirm
+    - intent: deny
+  - action: action_run_goal_broadcaster
+  - action: action_clear_book_form_slot
 
 - story: return book
   steps:
   - intent: request_return_book
   - action: utter_request_place_book
   - intent: affirm
-  - action: action_request_place_book
+  - action: action_request_place_return_book
   - intent: affirm
-  - action: utter_request_place_student_card
-  - intent: affirm
+  # - action: utter_ask_for_return_more_book
   - action: action_process_return_form
 
 # - story: interactive_story_1

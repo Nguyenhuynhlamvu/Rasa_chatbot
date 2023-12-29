@@ -23,6 +23,8 @@ entities:
   # - place
   - book_type
   - borrow_dates
+  - book_name
+  - confirm_enough_books
 
 slots:
   name:
@@ -38,6 +40,13 @@ slots:
       - type: from_entity
         entity: book_type
 
+  book_name:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: book_name
+
   borrow_dates:
     type: text
     influence_conversation: true
@@ -45,11 +54,26 @@ slots:
       - type: from_entity
         entity: borrow_dates
 
+  confirm_enough_books:
+    type: bool
+    initial_value: null
+    influence_conversation: true
+    mappings:
+      - type: custom
+
 forms:
   lend_form:
     required_slots:
       - book_type
       - borrow_dates
+
+  find_book_form:
+    required_slots:
+      - book_name
+
+  place_borrow_book_form:
+    required_slots:
+      - confirm_enough_books
 
 responses:
   utter_greet_with_name:
@@ -84,15 +108,21 @@ responses:
 
   utter_ask_book_type:
   - text: "Bạn muốn mượn sách gì?"
+
+  utter_ask_book_name:
+  - text: "Bạn muốn tìm sách gì?"
   
   utter_ask_borrow_dates:
-  - text: "bạn muốn mượn trong mấy ngày?"
+  - text: "Bạn muốn mượn trong mấy ngày?"
+
+  utter_ask_confirm_enough_books:
+  - text: "mmm"
   
   utter_unclear:
   - text: "Thưa quý khách, hiện tại tôi chưa hiểu được yêu cầu của Quý khách."
 
   utter_request_place_student_card:
-  - text: "Làm ơn đưa thẻ sinh viên của bạn vào để tôi hoàn thành thủ tục trả sách."
+  - text: "Làm ơn đưa thẻ sinh viên của bạn vào khe bên dưới."
 
   utter_request_place_book:
   - text: "Làm ơn hãy đưa sách vào khe bên dưới để mình kiểm tra."
@@ -100,17 +130,29 @@ responses:
   utter_ask_find_book:
   - text: "Bạn muốn tìm sách gì?"
 
+  utter_ask_already_have_book:
+  - text: Bạn đã tìm được cuốn sách mình muốn mượn chưa?
+
 actions:
 # - action_remember_where
 # - action_tell_time
 - utter_greet
 - action_submit
 - utter_book_slots
-- validate_lend_form
+- utter_ask_confirm_enough_books
+- validate_lend_form  
 - utter_ask_find_book
 - action_run_goal_broadcaster
 - action_ask_for_instruction
 - action_process_return_form
 - action_request_place_book
-- utter_request_place_book
+- action_request_place_return_book
+- action_request_place_borrow_book
 - utter_request_place_student_card
+- action_find_book
+- action_clear_book_form_slot
+- utter_ask_already_have_book
+- action_request_place_student_card
+- action_process_lend_form
+# - place_borrow_book_form
+- validate_place_borrow_book_form
