@@ -1,0 +1,6 @@
+[
+  {
+    "name": "book_name",
+    "pattern": "(\\blý\\ 1\\b|\\bvật\\ lý\\ 1\\b|\\btoán\\ 2\\b|\\btoán\\ 1\\b|\\banh\\ văn\\ 1\\b|\\banh\\ văn\\ 2\\b|\\banh\\ văn\\ 3\\b|\\bhóa\\ đại\\ cương\\b|\\btriết\\ học\\b|\\blịch\\ sử\\ Đảng\\b|\\bvật\\ lý\\ lượng\\ tử\\b|\\bdậy\\ sơm\\ để\\ thành\\ công\\b)"
+  }
+]

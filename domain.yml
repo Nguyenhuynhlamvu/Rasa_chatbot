@@ -22,9 +22,7 @@ entities:
   - name
   # - place
   - book_type
-  - borrow_dates
   - book_name
-  - confirm_enough_books
 
 slots:
   name:
@@ -47,33 +45,16 @@ slots:
       - type: from_entity
         entity: book_name
 
-  borrow_dates:
-    type: text
-    influence_conversation: true
-    mappings:
-      - type: from_entity
-        entity: borrow_dates
-
-  confirm_enough_books:
-    type: bool
-    initial_value: null
-    influence_conversation: true
-    mappings:
-      - type: custom
 
 forms:
   lend_form:
     required_slots:
       - book_type
-      - borrow_dates
 
   find_book_form:
     required_slots:
       - book_name
 
-  place_borrow_book_form:
-    required_slots:
-      - confirm_enough_books
 
 responses:
   utter_greet_with_name:
@@ -133,14 +114,27 @@ responses:
   utter_ask_already_have_book:
   - text: Bạn đã tìm được cuốn sách mình muốn mượn chưa?
 
+  utter_ask_another_book:
+  - text: 'Bạn muốn mượn cuốn sách nào nữa không?'
+
+  utter_ask_another_return_book:
+  - text: 'Bạn muốn trả cuốn sách nào nữa không?'
+
+  utter_ask_for_instruction:
+  - text: 'Bạn có muốn mình dẫn đường đến kệ sách này không?'
+
 actions:
 # - action_remember_where
 # - action_tell_time
 - utter_greet
+- utter_ask_another_book
+- utter_ask_another_return_book
+- utter_ask_for_instruction
 - action_submit
 - utter_book_slots
 - utter_ask_confirm_enough_books
-- validate_lend_form  
+- validate_lend_form 
+- validate_find_book_form  
 - utter_ask_find_book
 - action_run_goal_broadcaster
 - action_ask_for_instruction

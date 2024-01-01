@@ -1,0 +1,10 @@
+[
+  {
+    "name": "book_name",
+    "pattern": "(\\blý\\ 1\\b|\\bvật\\ lý\\ 1\\b|\\btoán\\ 2\\b|\\bhóa\\ đại\\ cương\\b)"
+  },
+  {
+    "name": "borrow_dates",
+    "pattern": "(\\b1\\b|\\b2\\b|\\b3\\b|\\b4\\b|\\bmột\\b|\\bhai\\b)"
+  }
+]

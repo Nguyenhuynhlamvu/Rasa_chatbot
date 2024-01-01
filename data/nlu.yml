@@ -125,6 +125,10 @@ nlu:
     - Tao muốn tìm sách
     - Tìm giúp tớ cuốn sách
     - Bạn có thể tìm cho mình cuốn sách này không
+    - Giúp mình tìm cuốn sách này
+    - Tìm sách
+    - Tìm một quyển sách
+    - Tìm một cuốn sách
 
 - intent: inform
   examples: |
@@ -139,19 +143,46 @@ nlu:
     - sách [vật lý](book_name)
     - sách [khoa học](book_name)
     - [trí tuệ nhân tạo](book_name)
+    - sách [vật lý 1](book_name)
+    - sách [toán 1](book_name)
     
 - lookup: book_name
   examples: |
     - lý 1
     - vật lý 1
+    - vật lý 2
     - toán 2
+    - toán 1
+    - anh văn 1
+    - anh văn 2
+    - anh văn 3
     - hóa đại cương
-
-- lookup: borrow_dates
-  examples: |
-    - 1
-    - 2
-    - 3
-    - 4
-    - một
-    - hai
+    - triết học
+    - lịch sử Đảng
+    - vật lý lượng tử
+    - dậy sơm để thành công
+    - Bài tập cơ học kết cấu
+    - Tiếng Anh trong Kiến trúc và Xây dựng
+    - 3000 Ngữ động từ Tiếng Anh
+    - IELTS Special journal
+    - Tự học 9900 câu giao tiếp tiếng Anh thông dụng trong đời sống hàng ngày
+    - 202 thành ngữ Tiếng Anh giao tiếp thông dụng
+    - Tiếng Anh thời hội nhập
+    - Vật lý kiến trúc
+    - Vật lý đại cương - Tập 2
+    - Vật lý đại cương - Tập 1
+    - Cơ sở vật lý chất rắn
+    - Vật lý điện tử
+    - Giáo trình hóa học tổng hợp hữu cơ
+    - Hóa học phân tích
+    - Hoá học hữu cơ
+    - Hóa học lập thể
+    - Bài tập hóa học đại cương
+    - Hóa học hữu cơ - Tập 1
+    - Hóa học hữu cơ - Tập 2
+    - Quy hoạch tuyến tính
+    - Giáo trình lý thuyết thống kê
+    - Lý thuyết xác suất
+    - Giáo trình xác suất và thống kê
+    - Toán cao cấp
+    - Hình học cao cấp

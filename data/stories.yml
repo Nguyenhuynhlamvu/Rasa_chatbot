@@ -11,32 +11,41 @@ stories:
 #     - intent: deny
 #   - action: action_process_lend_form
 
-# - story: sad path 1
-#   steps:
-#   - intent: greet
-#   - action: utter_greet
-#   - intent: mood_unhappy
-#   - action: utter_cheer_up
-#   - action: utter_did_that_help
-#   - intent: affirm
-#   - action: utter_happy
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
 
-# - story: sad path 2
-#   steps:
-#   - intent: greet
-#   - action: utter_greet
-#   - intent: mood_unhappy
-#   - action: utter_cheer_up
-#   - action: utter_did_that_help
-#   - intent: deny
-#   - action: utter_bye
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_bye
 
 - story: lend book 1
   steps:
   - intent: request_borrow_book
   - action: utter_ask_already_have_book
   - intent: deny
-  - checkpoint: check_find_book
+  - action: find_book_form
+  - active_loop: find_book_form
+  # - action: action_clear_book_form_slot
+  # - action: action_find_book
+  # - intent: affirm
+  - action: utter_ask_for_instruction
+  - or:
+    - intent: affirm
+    - intent: deny
+  - action: action_run_goal_broadcaster
 
 - story: lend book 2
   steps:
@@ -50,22 +59,34 @@ stories:
   # - action: utter_request_place_book
   # - intent: affirm
   - action: action_request_place_borrow_book
-  - or:
-    - intent: affirm
-    - intent: deny
-  - action: place_borrow_book_form
-  - active_loop: place_borrow_book_form
+  # - intent: affirm
+  - action: utter_ask_another_book
+  # - action: action_process_lend_form
+
+- story: Borrow Additional Books2
+  steps:
+  - action: utter_ask_another_book
+  - intent: affirm
+  - action: utter_request_place_book
+  - intent: affirm
+  - action: action_request_place_borrow_book
+  # - intent: affirm
+  - action: utter_ask_another_book
+
+- story: User Denies Borrowing More Books 2
+  steps:
+  - action: utter_ask_another_book
+  - intent: deny
   - action: action_process_lend_form
   
 - story: find book
   steps:
   - intent: ask_for_finding_books
-  - checkpoint: check_find_book
   - action: find_book_form
   - active_loop: find_book_form
-  - action: action_find_book
-  - intent: affirm
-  - action: action_ask_for_instruction
+  # - action: action_find_book
+  # - intent: affirm
+  - action: utter_ask_for_instruction
   - or:
     - intent: affirm
     - intent: deny
@@ -78,8 +99,22 @@ stories:
   - action: utter_request_place_book
   - intent: affirm
   - action: action_request_place_return_book
+  # - intent: affirm
+  - action: utter_ask_another_return_book
+
+- story: Returning Additional Books
+  steps:
+  - action: utter_ask_another_return_book
   - intent: affirm
-  # - action: utter_ask_for_return_more_book
+  - action: utter_request_place_book
+  - intent: affirm
+  - action: action_request_place_return_book
+  - action: utter_ask_another_return_book
+
+- story: User Denies Returning More Books
+  steps:
+  - action: utter_ask_another_return_book
+  - intent: deny
   - action: action_process_return_form
 
 # - story: interactive_story_1

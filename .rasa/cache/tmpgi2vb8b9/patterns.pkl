@@ -1,6 +1,0 @@
-[
-  {
-    "name": "place",
-    "pattern": "(\\bVietNam\\b|\\bLondon\\b)"
-  }
-]
