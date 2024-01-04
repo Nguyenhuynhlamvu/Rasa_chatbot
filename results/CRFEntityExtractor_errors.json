@@ -1,0 +1,247 @@
+[
+  {
+    "text": "toán học",
+    "entities": [
+      {
+        "start": 0,
+        "end": 8,
+        "value": "toán học",
+        "entity": "book_type"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_name",
+        "start": 0,
+        "end": 8,
+        "confidence_entity": 0.67,
+        "value": "toán học",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "sách khoa học",
+    "entities": [
+      {
+        "start": 5,
+        "end": 13,
+        "value": "khoa học",
+        "entity": "book_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_type",
+        "start": 10,
+        "end": 13,
+        "confidence_entity": 0.9980010390281677,
+        "value": "học",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "hi, mình là nữ",
+    "entities": [
+      {
+        "start": 12,
+        "end": 14,
+        "value": "nữ",
+        "entity": "name"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "sách vật lý",
+    "entities": [
+      {
+        "start": 5,
+        "end": 11,
+        "value": "vật lý",
+        "entity": "book_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_type",
+        "start": 5,
+        "end": 11,
+        "confidence_entity": 0.8492484092712402,
+        "value": "vật lý",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "book_type",
+        "start": 5,
+        "end": 11,
+        "confidence_entity": 0.6545069659211941,
+        "value": "vật lý",
+        "extractor": "CRFEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "chào bạn, mình tên là nam",
+    "entities": [
+      {
+        "start": 22,
+        "end": 25,
+        "value": "nam",
+        "entity": "name"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "hai ngày",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "hai",
+        "entity": "borrow_dates"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "sách vật lý",
+    "entities": [
+      {
+        "start": 5,
+        "end": 11,
+        "value": "vật lý",
+        "entity": "book_type"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_name",
+        "start": 5,
+        "end": 11,
+        "confidence_entity": 0.9657608866691589,
+        "value": "vật lý",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "book_name",
+        "start": 5,
+        "end": 11,
+        "confidence_entity": 0.7732738112003136,
+        "value": "vật lý",
+        "extractor": "CRFEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "ba ngày",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "ba",
+        "entity": "borrow_dates"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "sách vật lý 1",
+    "entities": [
+      {
+        "start": 5,
+        "end": 13,
+        "value": "vật lý 1",
+        "entity": "book_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_name",
+        "start": 5,
+        "end": 13,
+        "value": "vật lý 1",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "book_type",
+        "start": 5,
+        "end": 11,
+        "confidence_entity": 0.6373974680900574,
+        "value": "vật lý",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "book_type",
+        "start": 5,
+        "end": 8,
+        "confidence_entity": 0.4105471553374602,
+        "value": "vật",
+        "extractor": "CRFEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "sách toán 1",
+    "entities": [
+      {
+        "start": 5,
+        "end": 11,
+        "value": "toán 1",
+        "entity": "book_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_name",
+        "start": 5,
+        "end": 11,
+        "value": "toán 1",
+        "extractor": "RegexEntityExtractor"
+      },
+      {
+        "entity": "book_type",
+        "start": 5,
+        "end": 9,
+        "confidence_entity": 0.9971857070922852,
+        "value": "toán",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "xin chào, mình là ái",
+    "entities": [
+      {
+        "start": 18,
+        "end": 20,
+        "value": "ái",
+        "entity": "name"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "trí tuệ nhân tạo",
+    "entities": [
+      {
+        "start": 0,
+        "end": 16,
+        "value": "trí tuệ nhân tạo",
+        "entity": "book_name"
+      }
+    ],
+    "predicted_entities": []
+  }
+]

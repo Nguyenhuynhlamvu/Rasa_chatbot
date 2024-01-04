@@ -106,8 +106,8 @@ class ActionRequestPlaceStudentCard(Action):
         if ID_STUDENT != 'None':
             result = book_search.search_studentinfo_by_id(ID_STUDENT)
             if result is not None:
-                HTTP_methods.post_message(info_database, str(result))
-                dispatcher.utter_message(text=f"Mã số sinh viên của bạn là {ID_STUDENT} phải không.")
+                HTTP_methods.post_message(info_student, str(result))
+                dispatcher.utter_message(text=f"Mã số sinh viên của bạn là {ID_STUDENT}.")
                 dispatcher.utter_message(text=f"Làm ơn đưa sách vào khe bên dưới để mình kiểm tra.")
             else:
                 dispatcher.utter_message(text=f"Xin lỗi, mình không tìm thấy trong dữ liệu bất kì sinh viên nào có mã số sinh viên là {ID_STUDENT}.")
@@ -135,12 +135,12 @@ class ActionRequestPlaceBorrowBook(Action):
             time.sleep(0.05)
         BORROW_BOOK_LIST.append(ID)
         if ID != 'None':
-            name_book = book_search.search_name_by_id_in_bookitem(ID)
+            name_book = book_search.search_name_by_bookID_in_bookitem(ID)
             # print(result)
             if name_book is not None:
                 result = book_search.search_all_by_name_in_books(name_book)
                 # print('....................................')
-                HTTP_methods.post_message(info_database, str(result))
+                HTTP_methods.post_message(info_book, str(result))
                 dispatcher.utter_message(text=f"Cuốn sách bạn muốn mượn là {name_book}.")
                 # dispatcher.utter_message(text=f"Bạn có muốn mượn thêm cuốn sách nào nữa không.")
             else:

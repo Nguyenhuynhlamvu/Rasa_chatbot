@@ -1,0 +1,322 @@
+[
+  {
+    "text": "toán học",
+    "entities": [
+      {
+        "start": 0,
+        "end": 8,
+        "value": "toán học",
+        "entity": "book_type"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_name",
+        "start": 0,
+        "end": 8,
+        "confidence_entity": 0.67,
+        "value": "toán học",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "sách khoa học",
+    "entities": [
+      {
+        "start": 5,
+        "end": 13,
+        "value": "khoa học",
+        "entity": "book_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_type",
+        "start": 10,
+        "end": 13,
+        "confidence_entity": 0.9980010390281677,
+        "value": "học",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "hi, mình là nữ",
+    "entities": [
+      {
+        "start": 12,
+        "end": 14,
+        "value": "nữ",
+        "entity": "name"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "sách văn học",
+    "entities": [
+      {
+        "start": 5,
+        "end": 12,
+        "value": "văn học",
+        "entity": "book_type"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_type",
+        "start": 5,
+        "end": 12,
+        "confidence_entity": 0.8451583385467529,
+        "value": "văn học",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "book_type",
+        "start": 5,
+        "end": 12,
+        "confidence_entity": 0.849354707232695,
+        "value": "văn học",
+        "extractor": "CRFEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "tôi muốn mượn sách về văn học trong một ngày",
+    "entities": [
+      {
+        "start": 22,
+        "end": 29,
+        "value": "văn học",
+        "entity": "book_type"
+      },
+      {
+        "start": 36,
+        "end": 39,
+        "value": "một",
+        "entity": "borrow_dates"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_type",
+        "start": 22,
+        "end": 29,
+        "confidence_entity": 0.9389988780021667,
+        "value": "văn học",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "borrow_dates",
+        "start": 36,
+        "end": 39,
+        "confidence_entity": 0.9285138249397278,
+        "value": "một",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "book_type",
+        "start": 22,
+        "end": 29,
+        "confidence_entity": 0.5869831990550867,
+        "value": "văn học",
+        "extractor": "CRFEntityExtractor"
+      },
+      {
+        "entity": "borrow_dates",
+        "start": 36,
+        "end": 39,
+        "confidence_entity": 0.7524072025028147,
+        "value": "một",
+        "extractor": "CRFEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "sách vật lý",
+    "entities": [
+      {
+        "start": 5,
+        "end": 11,
+        "value": "vật lý",
+        "entity": "book_name"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_type",
+        "start": 5,
+        "end": 11,
+        "confidence_entity": 0.8492484092712402,
+        "value": "vật lý",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "book_type",
+        "start": 5,
+        "end": 11,
+        "confidence_entity": 0.6545069659211941,
+        "value": "vật lý",
+        "extractor": "CRFEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "chào bạn, mình tên là nam",
+    "entities": [
+      {
+        "start": 22,
+        "end": 25,
+        "value": "nam",
+        "entity": "name"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "tôi muốn mượn sách về văn học",
+    "entities": [
+      {
+        "start": 22,
+        "end": 29,
+        "value": "văn học",
+        "entity": "book_type"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_type",
+        "start": 22,
+        "end": 29,
+        "confidence_entity": 0.920738697052002,
+        "value": "văn học",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "book_type",
+        "start": 22,
+        "end": 29,
+        "confidence_entity": 0.8944360888050343,
+        "value": "văn học",
+        "extractor": "CRFEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "hai ngày",
+    "entities": [
+      {
+        "start": 0,
+        "end": 3,
+        "value": "hai",
+        "entity": "borrow_dates"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "sách vật lý",
+    "entities": [
+      {
+        "start": 5,
+        "end": 11,
+        "value": "vật lý",
+        "entity": "book_type"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "book_name",
+        "start": 5,
+        "end": 11,
+        "confidence_entity": 0.9657608866691589,
+        "value": "vật lý",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      },
+      {
+        "entity": "book_name",
+        "start": 5,
+        "end": 11,
+        "confidence_entity": 0.7732738112003136,
+        "value": "vật lý",
+        "extractor": "CRFEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "ba ngày",
+    "entities": [
+      {
+        "start": 0,
+        "end": 2,
+        "value": "ba",
+        "entity": "borrow_dates"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "xin chào, mình là ái",
+    "entities": [
+      {
+        "start": 18,
+        "end": 20,
+        "value": "ái",
+        "entity": "name"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "tôi mượn trong một ngày",
+    "entities": [
+      {
+        "start": 15,
+        "end": 18,
+        "value": "một",
+        "entity": "borrow_dates"
+      }
+    ],
+    "predicted_entities": [
+      {
+        "entity": "borrow_dates",
+        "start": 15,
+        "end": 18,
+        "confidence_entity": 0.6553072453957152,
+        "value": "một",
+        "extractor": "CRFEntityExtractor"
+      }
+    ]
+  },
+  {
+    "text": "trí tuệ nhân tạo",
+    "entities": [
+      {
+        "start": 0,
+        "end": 16,
+        "value": "trí tuệ nhân tạo",
+        "entity": "book_name"
+      }
+    ],
+    "predicted_entities": []
+  }
+]

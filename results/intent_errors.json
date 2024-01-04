@@ -1,0 +1,154 @@
+[
+  {
+    "text": "good",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.6583727598190308
+    }
+  },
+  {
+    "text": "không có gì vui cả",
+    "intent": "mood_unhappy",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.5032973885536194
+    }
+  },
+  {
+    "text": "vâng",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.5427344441413879
+    }
+  },
+  {
+    "text": "không đời nào",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.6301832795143127
+    }
+  },
+  {
+    "text": "đéo",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.8837540745735168
+    }
+  },
+  {
+    "text": "nghe tuyệt đấy",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.9666891098022461
+    }
+  },
+  {
+    "text": "Ngày hôm nay của tôi thật tệ",
+    "intent": "mood_unhappy",
+    "intent_prediction": {
+      "name": "inform",
+      "confidence": 0.9750825762748718
+    }
+  },
+  {
+    "text": "chào bạn, mình tên là nam",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.2596071660518646
+    }
+  },
+  {
+    "text": "có ai giúp mình không",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "ask_for_finding_books",
+      "confidence": 0.628146231174469
+    }
+  },
+  {
+    "text": "nghe ổn đấy",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.9227057099342346
+    }
+  },
+  {
+    "text": "muốn",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "ask_for_finding_books",
+      "confidence": 0.42814573645591736
+    }
+  },
+  {
+    "text": "chưa",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.7358362078666687
+    }
+  },
+  {
+    "text": "hoàn hảo",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.5402979254722595
+    }
+  },
+  {
+    "text": "tôi thấy không ổn chút nào",
+    "intent": "mood_unhappy",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.6033475995063782
+    }
+  },
+  {
+    "text": "có",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.9364861249923706
+    }
+  },
+  {
+    "text": "bye",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.9554586410522461
+    }
+  },
+  {
+    "text": "ô kê",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.3470213711261749
+    }
+  },
+  {
+    "text": "quá được",
+    "intent": "mood_great",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.6646988391876221
+    }
+  },
+  {
+    "text": "trí tuệ nhân tạo",
+    "intent": "inform",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.47493505477905273
+    }
+  }
+]

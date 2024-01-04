@@ -39,6 +39,7 @@ class ActionValidateFindBookForm(FormValidationAction):
                            domain: DomainDict,
                                 ) -> Dict[Text, Any]:
         global BOOK_NAME
+        print('..........................')
         name = HTTP_methods.get_request(choose_book).text.encode('latin1').decode('utf8')
         print('...................name: ', name)
         if name != '0':
@@ -54,7 +55,7 @@ class ActionValidateFindBookForm(FormValidationAction):
             HTTP_methods.post_message(run_barcode, 'find_book_list')
             BOOK_NAME = result[1]
             # print('result: ', result[1])
-            dispatcher.utter_message(text=f"Bạn muốn tìm cuốn sách {name}")
+            dispatcher.utter_message(text=f"Bạn muốn tìm cuốn sách {name}, nó nằm ở kệ sách {result[9]}")
             if book_search.search_bookid_by_name_in_bookitem(name, 'true') == None:
                 dispatcher.utter_message(text=f"Xin lỗi bạn nhưng thư viện hiện không còn cuốn sách {name} nào.")
                 return {"book_name": None}

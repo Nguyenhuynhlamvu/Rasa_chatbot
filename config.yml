@@ -20,7 +20,11 @@ language: "vi"
 # https://rasa.com/docs/rasa/nlu/components/
 
 pipeline:
-  - name: WhitespaceTokenizer
+  - name: SpacyNLP
+    model: "vi_core_news_lg"
+  - name: SpacyTokenizer
+  - name: SpacyFeaturizer
+  # - name: WhitespaceTokenizer
   - name: RegexFeaturizer
     number_additional_patterns: 10
   - name: RegexEntityExtractor
@@ -33,6 +37,7 @@ pipeline:
     # use match word boundaries for lookup table
     use_word_boundaries: True
   - name: LexicalSyntacticFeaturizer
+  - name: CountVectorsFeaturizer
   - name: CountVectorsFeaturizer
     analyzer: char_wb
     min_ngram: 1

@@ -1,0 +1,53 @@
+{
+  "book_name": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 13,
+    "confused_with": {
+      "book_type": 3
+    }
+  },
+  "borrow_dates": {
+    "precision": 1.0,
+    "recall": 0.5,
+    "f1-score": 0.6666666666666666,
+    "support": 4,
+    "confused_with": {}
+  },
+  "name": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 3,
+    "confused_with": {}
+  },
+  "book_type": {
+    "precision": 0.6666666666666666,
+    "recall": 0.6,
+    "f1-score": 0.631578947368421,
+    "support": 10,
+    "confused_with": {
+      "book_name": 2
+    }
+  },
+  "micro avg": {
+    "precision": 0.6153846153846154,
+    "recall": 0.26666666666666666,
+    "f1-score": 0.37209302325581395,
+    "support": 30
+  },
+  "macro avg": {
+    "precision": 0.41666666666666663,
+    "recall": 0.275,
+    "f1-score": 0.32456140350877194,
+    "support": 30
+  },
+  "weighted avg": {
+    "precision": 0.3555555555555555,
+    "recall": 0.26666666666666666,
+    "f1-score": 0.2994152046783626,
+    "support": 30
+  },
+  "accuracy": 0.9329268292682927
+}
